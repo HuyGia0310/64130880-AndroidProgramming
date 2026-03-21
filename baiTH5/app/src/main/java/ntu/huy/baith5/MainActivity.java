@@ -1,6 +1,5 @@
-package ntu.NT21.vd2;
+package ntu.huy.baith5;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,42 +14,19 @@ public class MainActivity extends AppCompatActivity {
     EditText editTextSo1;
     EditText editTextSo2;
     EditText editTextKQ;
-    Button nutCong,nutTru,nutNhan,nutChia;
+    Button nutCong, nutTru, nutNhan, nutChia;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         TimDieuKhien();
-        View.OnClickListener boLangNgheCong = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XuLyCong();
-            }
-        };
-        nutCong.setOnClickListener(boLangNgheCong);
-        nutTru.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XuLyTru();
-            }
-        });
-        nutNhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XuLyNhan();
-            }
-        });
-        nutChia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XuLyChia();
-            }
-        });
     }
-    void TimDieuKhien(){
-        EditText editTextSo1 = (EditText)findViewById(R.id.edtSo1);
-        EditText editTextSo2 = (EditText)findViewById(R.id.edtSo2);
+
+    void TimDieuKhien() {
+        EditText editTextSo1 = (EditText) findViewById(R.id.edtSo1);
+        EditText editTextSo2 = (EditText) findViewById(R.id.edtSo2);
         EditText editTextKQ = findViewById(R.id.edtKetQua);
         nutCong = (Button) findViewById(R.id.btnCong);
         nutTru = (Button) findViewById(R.id.btnTru);
@@ -59,23 +35,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void XuLyCong(){
-    //tìm edtSo1 va So2
-    //lấy dữ liệu từ 2 dkhien đó
+    public void XuLyCong(View v) {
+        //tìm edtSo1 va So2
+        //lấy dữ liệu từ 2 dkhien đó
         String soThu1 = editTextSo1.getText().toString();
         String soThu2 = editTextSo2.getText().toString();
-    //chuyển dữ liệu từ chuỗi sang số
+        //chuyển dữ liệu từ chuỗi sang số
         float soA = Float.parseFloat(soThu1);
         float soB = Float.parseFloat(soThu2);
-    //tính toán
+        //tính toán
         float Tong = soA + soB;
-    //hiện kq
-    //chuẩn bị dữ liệu xuất biến thành dạng chuỗi
+        //hiện kq
+        //chuẩn bị dữ liệu xuất biến thành dạng chuỗi
         String chuoiKQ = String.valueOf(Tong);
-    //gán kq lên dk
+        //gán kq lên dk
         editTextKQ.setText(chuoiKQ);
     }
-    void XuLyTru(){
+
+    public void XuLyTru(View v) {
         //tìm edtSo1 va So2
         //lấy dữ liệu từ 2 dkhien đó
         String soThu1 = editTextSo1.getText().toString();
@@ -91,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
         //gán kq lên dk
         editTextKQ.setText(chuoiKQ);
     }
-    void XuLyNhan(){
+
+    public void XuLyNhan(View v) {
         //tìm edtSo1 va So2
 
         //lấy dữ liệu từ 2 dkhien đó
@@ -109,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
         //gán kq lên dk
         editTextKQ.setText(chuoiKQ);
     }
-    void XuLyChia(){
+
+    public void XuLyChia(View v) {
 //tìm edtSo1 va So2
 
         //lấy dữ liệu từ 2 dkhien đó
