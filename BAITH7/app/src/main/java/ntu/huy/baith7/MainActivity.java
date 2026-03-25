@@ -1,8 +1,11 @@
 package ntu.huy.baith7;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    ArrayList<String> dsTenTinhThanhVN;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        ArrayList<String> dsTenTinhThanhVN;
+
         dsTenTinhThanhVN = new ArrayList<String>();
 
         dsTenTinhThanhVN.add("Hà Nội");
@@ -42,5 +46,15 @@ public class MainActivity extends AppCompatActivity {
         ListView lvTenTinhThanh = findViewById(R.id.lvDanhSachTT);
 
         lvTenTinhThanh.setAdapter(adapterTinhThanh);
+
+        lvTenTinhThanh.setOnItemClickListener(BoLangNghevaXL);
     }
+    AdapterView.OnItemClickListener BoLangNghevaXL = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            String strTenTinhChon = dsTenTinhThanhVN.get(i);
+
+            Toast.makeText(MainActivity.this,strTenTinhChon,Toast.LENGTH_LONG).show();
+        }
+    };
 }
