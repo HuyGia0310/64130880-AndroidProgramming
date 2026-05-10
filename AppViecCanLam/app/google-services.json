@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "990710104451",
+    "project_id": "android-projects-d2f46",
+    "storage_bucket": "android-projects-d2f46.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990710104451:android:ae7d7f6c86ee56efa576b6",
+        "android_client_info": {
+          "package_name": "ntu.huy.appvieccanlam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvtNks-uvbbFU0h2-VtYHtFQBVrwAlrgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
